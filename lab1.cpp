@@ -68,7 +68,7 @@ struct Game {
     Particle *particle;
     int lastMouse[2];
     Shape box[5];
-    //Shape circle;
+    Shape circle;
     int n;
     ~Game() { delete [] particle; }
     Game(){
@@ -81,7 +81,9 @@ struct Game {
 	box[i].center.x = 120 + i*65;
 	box[i].center.y = 500 - i*60;
     }
-    //circle
+    circle.radius = 150.0;
+    circle.center.x = 500;
+    circle.center.y = 0;
   }
 };
 
@@ -288,7 +290,27 @@ void render(Game *game)
     float w, h;
     glClear(GL_COLOR_BUFFER_BIT);
     //Draw shapes...
+    
+    //set circle
+       const int n=40;
+    static int firsttime=1;
+    static Vec vert[40];
+    if (firsttime) {
+        float ang = 0.0, inc = (3.14159 *2.0) / (float)n;
+        for (int i=0; i<n; i++) {
+        vert[i].x = cos(ang)*game->circle.radius;
+        vert[i].y = sin(ang)*game->circle.radius;
+        ang += inc;
+        }
+        firsttime=0;
+    }
+       glColor3ub(255,255,255);
+    glBegin(GL_LINE_LOOP);
+       for (int i=0;i<n;i++){
+        glVertex2i(game->circle.center.x + vert[i].x, game->circle.center.y + vert[i].y);
+    }
 
+ 
     //draw box
     Shape *s;
     glColor3ub(90,140,90);
