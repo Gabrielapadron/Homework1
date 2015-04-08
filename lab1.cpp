@@ -304,7 +304,7 @@ void render(Game *game)
     //Draw shapes...
     
     //set circle
-       const int n=40;
+    const int n=40;
     static int firsttime=1;
     static Vec vert[40];
     if (firsttime) {
@@ -321,6 +321,7 @@ void render(Game *game)
        for (int i=0;i<n;i++){
         glVertex2i(game->circle.center.x + vert[i].x, game->circle.center.y + vert[i].y);
     }
+	   glEnd();
 
  
     //draw box
