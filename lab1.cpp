@@ -38,7 +38,7 @@
 #define WINDOW_WIDTH  800
 #define WINDOW_HEIGHT 600
 
-#define MAX_PARTICLES 40
+#define MAX_PARTICLES 4000
 #define GRAVITY 0.1
 
 //X Windows variables
