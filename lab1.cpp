@@ -38,7 +38,7 @@
 #define WINDOW_WIDTH  800
 #define WINDOW_HEIGHT 600
 
-#define MAX_PARTICLES 400000
+#define MAX_PARTICLES 40
 #define GRAVITY 0.1
 
 //X Windows variables
@@ -270,10 +270,22 @@ void movement(Game *game)
 	       p->s.center.y > game->box[j].center.y - game->box[j].height){
 
                //collision with box
-	       //p->s.center.y = game->box[j].center.y+10; 
+               p->s.center.y=game->box[j].center.y + game->box[j].height + 0.1;
+               p->velocity.x *= 1.01;
+	          //p->s.center.y = game->box[j].center.y+10; 
                p->velocity.y *= -0.5;
          }
      }
+     float d0,d1,dist;
+     d0 = p->s.center.x - game->circle.center.x;
+     d1 = p->s.center.y - game->circle.center.y;
+     dist = sqrt(d0*d0+d1*d1);
+     if(dist < game->circle.radius){
+         p->s.center.x = game.x->circle.center.x+(d0/dist)*game->circle.radius*1.01;
+         p->s.center.y = game.y->circle.center.y+(d1/dist)*game->circle.radius*1.01;
+
+         p->velocity.x +=(d0/dist)*2.25;
+         p->velocity.y +=(d1/dist)*2.25;
 
 	//check for off-screen
 	if (p->s.center.y < 0.0) {
