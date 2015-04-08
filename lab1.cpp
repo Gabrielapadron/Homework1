@@ -180,7 +180,7 @@ void init_opengl(void)
 void makeParticle(Game *game, int x, int y) {
     if (game->n >= MAX_PARTICLES)
         return;
-    std::cout << "makeParticle() " << x << " " << y << std::endl;
+    //std::cout << "makeParticle() " << x << " " << y << std::endl;
     //position of particle
     Particle *p = &game->particle[game->n];
     p->s.center.x = x;
@@ -270,9 +270,9 @@ void movement(Game *game)
                     p->s.center.y > game->box[j].center.y - game->box[j].height){
 
                 //collision with box
-                p->s.center.y=game->box[j].center.y + game->box[j].height + 0.1;
-                p->velocity.x *= 1.01;
-                //p->s.center.y = game->box[j].center.y+10; 
+               // p->s.center.y=game->box[j].center.y + game->box[j].height + 0.1;
+               // p->velocity.x *= 1.01;
+                p->s.center.y = game->box[j].center.y+10; 
                 p->velocity.y *= -0.5;
             }
         }
@@ -286,7 +286,7 @@ void movement(Game *game)
 
             p->velocity.x +=(d0/dist)*2.25;
             p->velocity.y +=(d1/dist)*2.25;
-
+        }
             //check for off-screen
             if (p->s.center.y < 0.0) {
                 memcpy(&game->particle[i],&game->particle[game->n-1],
@@ -296,7 +296,6 @@ void movement(Game *game)
             }
         }
 
-    }
 }
 
 void render(Game *game)
