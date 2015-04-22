@@ -80,13 +80,13 @@ struct Game {
         n=0;
         //declare a box shape
         for(int i=0; i<5;i++) {
-            box[i].width = 100;
-            box[i].height = 15;
+            box[i].width = 150;
+            box[i].height = 10;
             box[i].center.x = 120 + i*100;
             box[i].center.y = 500 - i*80;
         }
         circle.radius = 100.0;
-        circle.center.x = 620.0;
+        circle.center.x = 700.0;
         circle.center.y = 50.0;
     }
 };
@@ -354,7 +354,7 @@ void render(Game *game)
 
     //draw all particles here
     glPushMatrix();
-    glColor3ub(0.0,0.0,1.0);
+    glColor3ub(255,0,255);
 
     for (int i=0; i<game->n; i++) {
         Vec *c = &game->particle[i].s.center;
