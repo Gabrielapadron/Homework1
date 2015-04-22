@@ -80,13 +80,13 @@ struct Game {
         n=0;
         //declare a box shape
         for(int i=0; i<5;i++) {
-            box[i].width = 100;
-            box[i].height = 10;
-            box[i].center.x = 100 + i*100;
-            box[i].center.y = 500 - i*70;
+            box[i].width = 120;
+            box[i].height = 15;
+            box[i].center.x = 150 + i*100;
+            box[i].center.y = 500 - i*80;
         }
         circle.radius = 100.0;
-        circle.center.x = 750.0;
+        circle.center.x = 650.0;
         circle.center.y = 50.0;
     }
 };
@@ -331,6 +331,15 @@ void render(Game *game)
     for (int i=0;i<n;i++){
         glVertex2i(game->circle.center.x + vert[i].x, game->circle.center.y + vert[i].y);
     }
+    glEnd();
+    glColor3f(1.0,1.0,1.0);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2f(game->circle.center.x,game->circle.center.y);
+        for (int i=0; i<=360;i++) {
+            glVertex2f(
+                    game->circle.center.x+(game->circle.radius *cos(i * (3.14159*2.0)/360 )),
+                    game->circle.center.y+(game->circle.radius *sin(i * (3.14159*2.0)/ 360)));
+        }
     glEnd();
 
 
