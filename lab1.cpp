@@ -379,11 +379,11 @@ void render(Game *game)
         Rect testing;
         Rect maintenance;
 
-        requirements.left = game->box[0].center.x-(game->box[0].width*2);
-        design.left       = game->box[1].center.x-(game->box[1].width*2);
-        coding.left       = game->box[2].center.x-(game->box[2].width*2);
-        testing.left      = game->box[3].center.x-(game->box[3].width*2);
-        maintenance.left  = game->box[4].center.x-(game->box[4].width*2);
+        requirements.left = game->box[0].center.x-(game->box[0].width);
+        design.left       = game->box[1].center.x-(game->box[1].width);
+        coding.left       = game->box[2].center.x-(game->box[2].width);
+        testing.left      = game->box[3].center.x-(game->box[3].width);
+        maintenance.left  = game->box[4].center.x-(game->box[4].width);
         
         requirements.bot = game->box[0].center.y-game->box[0].height;
         design.bot       = game->box[1].center.y-game->box[1].height;
@@ -397,10 +397,10 @@ void render(Game *game)
         ggprint16(&coding, 200*5, cref, "Coding");
         ggprint16(&testing, 300*5, cref, "Testing");
         ggprint16(&maintenance, 400*5, cref, "Maintenance");*/
-        ggprint16(&requirements, 500 * 2, cref, "Requirments");
-        ggprint16(&design, 500 - 80, cref, "Design");
-        ggprint16(&coding, 500 - 2*80, cref, "Coding");
-        ggprint16(&testing, 500 - 3*80, cref, "Testing");
+        ggprint16(&requirements, 500, cref, "Requirments");
+        ggprint16(&design, 500, cref, "Design");
+        ggprint16(&coding, 500, cref, "Coding");
+        ggprint16(&testing, 500, cref, "Testing");
         ggprint16(&maintenance, 1000, cref, "Maintenance");
 }
 
