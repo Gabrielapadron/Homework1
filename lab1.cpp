@@ -81,7 +81,7 @@ struct Game {
         //declare a box shape
         for(int i=0; i<5;i++) {
             box[i].width = 100;
-            box[i].height = 40;
+            box[i].height = 15;
             box[i].center.x = 120 + i*100;
             box[i].center.y = 500 - i*80;
         }
@@ -379,24 +379,24 @@ void render(Game *game)
         Rect testing;
         Rect maintenance;
 
-        requirements.left = game->box[0].center.x;
-        design.left       = game->box[1].center.x;
-        coding.left       = game->box[2].center.x;
-        testing.left      = game->box[3].center.x;
-        maintenance.left  = game->box[4].center.x;
+        requirements.centerx = game->box[0].center.x;
+        design.centerx       = game->box[1].center.x;
+        coding.centerx       = game->box[2].center.x;
+        testing.centerx      = game->box[3].center.x;
+        maintenance.centerx  = game->box[4].center.x;
         
-        requirements.bot = game->box[0].center.y;
-        design.bot       = game->box[1].center.y;
-        coding.bot       = game->box[2].center.y;
-        testing.bot      = game->box[3].center.y;
-        maintenance.bot  = game->box[4].center.y;
+        requirements.centery = game->box[0].center.y;
+        design.centery       = game->box[1].center.y;
+        coding.centery       = game->box[2].center.y;
+        testing.centery      = game->box[3].center.y;
+        maintenance.centery  = game->box[4].center.y;
         
         unsigned int cref = 0x00336600;
-        ggprint16(&requirements, 500 - 0, cref, "Requirments");
-        ggprint16(&design, 500 - 80, cref, "Design");
-        ggprint16(&coding, 500 - 3*80, cref, "Coding");
-        ggprint16(&testing, 500 - 4*80, cref, "Testing");
-        ggprint16(&maintenance, 500 - 5*80, cref, "Maintenance");
+        ggprint16(&requirements, 0, cref, "Requirments");
+        ggprint16(&design, 0, cref, "Design");
+        ggprint16(&coding, 0, cref, "Coding");
+        ggprint16(&testing, 0, cref, "Testing");
+        ggprint16(&maintenance, 0, cref, "Maintenance");
         /*ggprint16(&requirements, 500 - 0, cref, "Requirments");
         ggprint16(&design, 500 - 80, cref, "Design");
         ggprint16(&coding, 500 - 2*80, cref, "Coding");
