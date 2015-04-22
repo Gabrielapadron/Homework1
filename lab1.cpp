@@ -80,9 +80,9 @@ struct Game {
         n=0;
         //declare a box shape
         for(int i=0; i<5;i++) {
-            box[i].width = 110;
+            box[i].width = 100;
             box[i].height = 10;
-            box[i].center.x = 120 + i*100;
+            box[i].center.x = 100 + i*100;
             box[i].center.y = 500 - i*80;
         }
         circle.radius = 100.0;
