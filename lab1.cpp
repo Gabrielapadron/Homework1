@@ -392,11 +392,11 @@ void render(Game *game)
         maintenance.bot  = game->box[4].center.y-game->box[4].height;
         
         unsigned int cref = 0x00336600;
-        ggprint16(&requirements, 0, cref, "Requirments");
-        ggprint16(&design, 0, cref, "Design");
-        ggprint16(&coding, 0, cref, "Coding");
-        ggprint16(&testing, 0, cref, "Testing");
-        ggprint16(&maintenance, 0, cref, "Maintenance");
+        ggprint16(&requirements, 50, cref, "Requirments");
+        ggprint16(&design, 50*1, cref, "Design");
+        ggprint16(&coding, 50*2, cref, "Coding");
+        ggprint16(&testing, 50*3, cref, "Testing");
+        ggprint16(&maintenance, 50*4, cref, "Maintenance");
         /*ggprint16(&requirements, 500 - 0, cref, "Requirments");
         ggprint16(&design, 500 - 80, cref, "Design");
         ggprint16(&coding, 500 - 2*80, cref, "Coding");
