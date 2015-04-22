@@ -243,7 +243,8 @@ int check_keys(XEvent *e, Game *game)
         }
         //You may check other keys here.
         if(key == XK_b) {
-            game->bubbler=!game->bubbler;
+            game->bubbler = !(game->bubbler);
+
         }
 
     }
