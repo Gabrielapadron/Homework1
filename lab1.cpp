@@ -396,7 +396,7 @@ void render(Game *game)
         ggprint16(&design, 150*2, cref, "Design");
         ggprint16(&coding, 200*3, cref, "Coding");
         ggprint16(&testing, 250*4, cref, "Testing");
-        ggprint16(&maintenance, 300*5, cref, "Maintenance");
+        ggprint16(&maintenance, 500*5, cref, "Maintenance");
         /*ggprint16(&requirements, 500 - 0, cref, "Requirments");
         ggprint16(&design, 500 - 80, cref, "Design");
         ggprint16(&coding, 500 - 2*80, cref, "Coding");
