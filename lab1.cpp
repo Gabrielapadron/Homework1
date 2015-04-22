@@ -40,7 +40,7 @@ extern "C" {
 #define WINDOW_WIDTH  800
 #define WINDOW_HEIGHT 600
 
-#define MAX_PARTICLES 4000
+#define MAX_PARTICLES 40000
 #define GRAVITY 0.1
 //#define rnd() (float) rand()/(float)RAND_MAX
 
@@ -287,14 +287,14 @@ void movement(Game *game)
         d0 = p->s.center.x - game->circle.center.x;
         d1 = p->s.center.y - game->circle.center.y;
         dist = sqrt(d0*d0+d1*d1);
-        if(dist < game->circle.radius +1){
-            p->velocity.x += 0.1;
-            p->velocity.y = 0;
-            // p->s.center.x = game->circle.center.x+(d0/dist)*game->circle.radius*1.01;
-           // p->s.center.y = game->circle.center.y+(d1/dist)*game->circle.radius*1.01;
+        if(dist < game->circle.radius){
+            //p->velocity.x += 0.1;
+            //p->velocity.y = 0;
+             p->s.center.x = game->circle.center.x+(d0/dist)*game->circle.radius*1.01;
+             p->s.center.y = game->circle.center.y+(d1/dist)*game->circle.radius*1.01;
 
-           // p->velocity.x +=(d0/dist)*2.25;
-           // p->velocity.y +=(d1/dist)*2.25;
+             p->velocity.x +=(d0/dist)*2.25;
+             p->velocity.y +=(d1/dist)*2.25;
         }
             //check for off-screen
             if (p->s.center.y < 0.0) {
@@ -379,11 +379,11 @@ void render(Game *game)
         Rect testing;
         Rect maintenance;
 
-        requirements.left = game->box[0].center.x-game->box[0].width;
-        design.left       = game->box[1].center.x-game->box[1].width;
-        coding.left       = game->box[2].center.x-game->box[2].width;
-        testing.left      = game->box[3].center.x-game->box[3].width;
-        maintenance.left  = game->box[4].center.x-game->box[4].width;
+        requirements.left = game->box[0].center.x-(game->box[0].width/2);
+        design.left       = game->box[1].center.x-(game->box[1].width/2);
+        coding.left       = game->box[2].center.x-(game->box[2].width/2);
+        testing.left      = game->box[3].center.x-(game->box[3].width/2);
+        maintenance.left  = game->box[4].center.x-(game->box[4].width/2);
         
         requirements.bot = game->box[0].center.y-game->box[0].height;
         design.bot       = game->box[1].center.y-game->box[1].height;
@@ -392,11 +392,11 @@ void render(Game *game)
         maintenance.bot  = game->box[4].center.y-game->box[4].height;
         
         unsigned int cref = 0x00336600;
-        ggprint16(&requirements, 50, cref, "Requirments");
-        ggprint16(&design, 50*1, cref, "Design");
-        ggprint16(&coding, 50*2, cref, "Coding");
-        ggprint16(&testing, 50*3, cref, "Testing");
-        ggprint16(&maintenance, 50*4, cref, "Maintenance");
+        ggprint16(&requirements, 100, cref, "Requirements");
+        ggprint16(&design, 100*2, cref, "Design");
+        ggprint16(&coding, 100*3, cref, "Coding");
+        ggprint16(&testing, 100*4, cref, "Testing");
+        ggprint16(&maintenance, 100*5, cref, "Maintenance");
         /*ggprint16(&requirements, 500 - 0, cref, "Requirments");
         ggprint16(&design, 500 - 80, cref, "Design");
         ggprint16(&coding, 500 - 2*80, cref, "Coding");
