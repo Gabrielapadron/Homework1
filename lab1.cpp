@@ -75,6 +75,7 @@ struct Game {
     int n;
     ~Game() { delete [] particle; }
     Game(){
+        bubbler=false;
         particle = new Particle[MAX_PARTICLES];
         n=0;
         //declare a box shape
