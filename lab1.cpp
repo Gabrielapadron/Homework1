@@ -80,14 +80,14 @@ struct Game {
         n=0;
         //declare a box shape
         for(int i=0; i<5;i++) {
-            box[i].width = 120;
-            box[i].height = 15;
+            box[i].width = 140;
+            box[i].height = 10;
             box[i].center.x = 150 + i*100;
             box[i].center.y = 500 - i*80;
         }
         circle.radius = 100.0;
-        circle.center.x = 650.0;
-        circle.center.y = 50.0;
+        circle.center.x = 750.0;
+        circle.center.y = 10.0;
     }
 };
 
@@ -288,8 +288,6 @@ void movement(Game *game)
         d1 = p->s.center.y - game->circle.center.y;
         dist = sqrt(d0*d0+d1*d1);
         if(dist < game->circle.radius +1){
-            //p->velocity.x += 0.1;
-            //p->velocity.y = 0;
              p->s.center.x = game->circle.center.x+(d0/dist)*game->circle.radius*1.01;
              p->s.center.y = game->circle.center.y+(d1/dist)*game->circle.radius*1.01;
 
@@ -314,7 +312,7 @@ void render(Game *game)
     //Draw shapes...
 
     //set circle
-    const int n=40;
+    const int n=10;
     static int firsttime=1;
     static Vec vert[40];
     if (firsttime) {
@@ -332,7 +330,7 @@ void render(Game *game)
         glVertex2i(game->circle.center.x + vert[i].x, game->circle.center.y + vert[i].y);
     }
     glEnd();
-    glColor3f(1.0,1.0,1.0);
+    glColor3f(0.60,0.40,0.12);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(game->circle.center.x,game->circle.center.y);
         for (int i=0; i<=360;i++) {
@@ -363,7 +361,7 @@ void render(Game *game)
 
     //draw all particles here
     glPushMatrix();
-    glColor3ub(rnd()*255,rnd()*255,rnd()*255);
+    glColor3f(0.0,0.0,1.0);//(rnd()*255,rnd()*255,rnd()*255);
 
     for (int i=0; i<game->n; i++) {
         Vec *c = &game->particle[i].s.center;
@@ -400,18 +398,10 @@ void render(Game *game)
         testing.bot      = game->box[3].center.y-game->box[3].height;
         maintenance.bot  = game->box[4].center.y-game->box[4].height;
         
-        unsigned int cref = 0x00336600;
-       /* ggprint16(&requirements, 100, cref, "Requirements");
-        ggprint16(&design, 100*5, cref, "Design");
-        ggprint16(&coding, 200*5, cref, "Coding");
-        ggprint16(&testing, 300*5, cref, "Testing");
-        ggprint16(&maintenance, 400*5, cref, "Maintenance");*/
-        ggprint16(&requirements,-0.5, cref, "Requirments");
-        ggprint16(&design,  -0.5, cref, "Design");
-        ggprint16(&coding, -0.5, cref, "Coding");
-        ggprint16(&testing, -0.5, cref, "Testing");
-        ggprint16(&maintenance, -0.5, cref, "Maintenance");
+        unsigned int cref = 0x00117200;
+        ggprint16(&requirements,100, cref, "Requirments");
+        ggprint16(&design,  200, cref, "Design");
+        ggprint16(&coding, 200, cref, "Coding");
+        ggprint16(&testing, 200, cref, "Testing");
+        ggprint16(&maintenance, 100, cref, "Maintenance");
 }
-
-
-
