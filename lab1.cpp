@@ -354,7 +354,7 @@ void render(Game *game)
 
     //draw all particles here
     glPushMatrix();
-    glColor3ub(150,160,220);
+    glColor3ub(0.0,0.0,1.0);
 
     for (int i=0; i<game->n; i++) {
         Vec *c = &game->particle[i].s.center;
