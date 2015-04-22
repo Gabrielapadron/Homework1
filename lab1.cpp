@@ -81,7 +81,7 @@ struct Game {
         //declare a box shape
         for(int i=0; i<5;i++) {
             box[i].width = 100;
-            box[i].height = 10;
+            box[i].height = 40;
             box[i].center.x = 120 + i*100;
             box[i].center.y = 500 - i*80;
         }
