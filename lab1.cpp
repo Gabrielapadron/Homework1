@@ -392,9 +392,14 @@ void render(Game *game)
         unsigned int cref = 0x00336600;
         ggprint16(&requirements, 500 - 0, cref, "Requirments");
         ggprint16(&design, 500 - 80, cref, "Design");
+        ggprint16(&coding, 500 - 3*80, cref, "Coding");
+        ggprint16(&testing, 500 - 4*80, cref, "Testing");
+        ggprint16(&maintenance, 500 - 5*80, cref, "Maintenance");
+        /*ggprint16(&requirements, 500 - 0, cref, "Requirments");
+        ggprint16(&design, 500 - 80, cref, "Design");
         ggprint16(&coding, 500 - 2*80, cref, "Coding");
         ggprint16(&testing, 500 - 3*80, cref, "Testing");
-        ggprint16(&maintenance, 500 - 4*80, cref, "Maintenance");
+        ggprint16(&maintenance, 500 - 4*80, cref, "Maintenance");*/
 }
 
 
