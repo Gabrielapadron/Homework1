@@ -390,11 +390,11 @@ void render(Game *game)
         maintenance.bot  = game->box[4].center.y;
         
         unsigned int cref = 0x00336600;
-        ggprint8b(&requirements, 500 - 0, cref, "Requirments");
-        ggprint8b(&design, 500 - 80, cref, "Design");
-        ggprint8b(&coding, 500 - 2*80, cref, "Coding");
-        ggprint8b(&testing, 500 - 3*80, cref, "Testing");
-        ggprint8b(&maintenance, 500 - 4*80, cref, "Maintenance");
+        ggprint16(&requirements, 500 - 0, cref, "Requirments");
+        ggprint16(&design, 500 - 80, cref, "Design");
+        ggprint16(&coding, 500 - 2*80, cref, "Coding");
+        ggprint16(&testing, 500 - 3*80, cref, "Testing");
+        ggprint16(&maintenance, 500 - 4*80, cref, "Maintenance");
 }
 
 
