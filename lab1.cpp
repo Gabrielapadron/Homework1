@@ -287,14 +287,14 @@ void movement(Game *game)
         d0 = p->s.center.x - game->circle.center.x;
         d1 = p->s.center.y - game->circle.center.y;
         dist = sqrt(d0*d0+d1*d1);
-        if(dist < game->circle.radius){
-            //p->velocity.x += 0.1;
-            //p->velocity.y = 0;
-             p->s.center.x = game->circle.center.x+(d0/dist)*game->circle.radius*1.01;
-             p->s.center.y = game->circle.center.y+(d1/dist)*game->circle.radius*1.01;
+        if(dist < game->circle.radius +1){
+            p->velocity.x += 0.1;
+            p->velocity.y = 0;
+            // p->s.center.x = game->circle.center.x+(d0/dist)*game->circle.radius*1.01;
+            // p->s.center.y = game->circle.center.y+(d1/dist)*game->circle.radius*1.01;
 
-             p->velocity.x +=(d0/dist)*2.25;
-             p->velocity.y +=(d1/dist)*2.25;
+             //p->velocity.x +=(d0/dist)*2.25;
+             //p->velocity.y +=(d1/dist)*2.25;
         }
             //check for off-screen
             if (p->s.center.y < 0.0) {
@@ -393,10 +393,10 @@ void render(Game *game)
         
         unsigned int cref = 0x00336600;
         ggprint16(&requirements, 100, cref, "Requirements");
-        ggprint16(&design, 120*2, cref, "Design");
-        ggprint16(&coding, 130*3, cref, "Coding");
-        ggprint16(&testing, 140*4, cref, "Testing");
-        ggprint16(&maintenance, 150*5, cref, "Maintenance");
+        ggprint16(&design, 150*2, cref, "Design");
+        ggprint16(&coding, 200*3, cref, "Coding");
+        ggprint16(&testing, 250*4, cref, "Testing");
+        ggprint16(&maintenance, 300*5, cref, "Maintenance");
         /*ggprint16(&requirements, 500 - 0, cref, "Requirments");
         ggprint16(&design, 500 - 80, cref, "Design");
         ggprint16(&coding, 500 - 2*80, cref, "Coding");
