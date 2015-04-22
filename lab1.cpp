@@ -379,11 +379,11 @@ void render(Game *game)
         Rect testing;
         Rect maintenance;
 
-        requirements.left = game->box[0].center.x-(game->box[0].width);
-        design.left       = game->box[1].center.x-(game->box[1].width);
-        coding.left       = game->box[2].center.x-(game->box[2].width);
-        testing.left      = game->box[3].center.x-(game->box[3].width);
-        maintenance.left  = game->box[4].center.x-(game->box[4].width);
+        requirements.left = game->box[0].center.x-(game->box[0].width*2);
+        design.left       = game->box[1].center.x-(game->box[1].width*2);
+        coding.left       = game->box[2].center.x-(game->box[2].width*2);
+        testing.left      = game->box[3].center.x-(game->box[3].width*2);
+        maintenance.left  = game->box[4].center.x-(game->box[4].width*2);
         
         requirements.bot = game->box[0].center.y-game->box[0].height;
         design.bot       = game->box[1].center.y-game->box[1].height;
