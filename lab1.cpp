@@ -379,17 +379,17 @@ void render(Game *game)
         Rect testing;
         Rect maintenance;
 
-        requirements.left = game->box[0].center.x;
-        design.left       = game->box[1].center.x;
-        coding.left       = game->box[2].center.x;
-        testing.left      = game->box[3].center.x;
-        maintenance.left  = game->box[4].center.x;
+        requirements.left = game->box[0].center.x-game->box[0].width;
+        design.left       = game->box[1].center.x-game->box[1].width;
+        coding.left       = game->box[2].center.x-game->box[2].width;
+        testing.left      = game->box[3].center.x-game->box[3].width;
+        maintenance.left  = game->box[4].center.x-game->box[4].width;
         
-        requirements.bot = game->box[0].center.y;
-        design.bot       = game->box[1].center.y;
-        coding.bot       = game->box[2].center.y;
-        testing.bot      = game->box[3].center.y;
-        maintenance.bot  = game->box[4].center.y;
+        requirements.bot = game->box[0].center.y-game->box[0].height;
+        design.bot       = game->box[1].center.y-game->box[1].height;
+        coding.bot       = game->box[2].center.y-game->box[2].height;
+        testing.bot      = game->box[3].center.y-game->box[3].height;
+        maintenance.bot  = game->box[4].center.y-game->box[4].height;
         
         unsigned int cref = 0x00336600;
         ggprint16(&requirements, 0, cref, "Requirments");
