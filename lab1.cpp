@@ -86,7 +86,7 @@ struct Game {
             box[i].center.y = 500 - i*80;
         }
         circle.radius = 100.0;
-        circle.center.x = 700.0;
+        circle.center.x = 750.0;
         circle.center.y = 50.0;
     }
 };
