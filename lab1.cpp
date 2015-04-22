@@ -354,7 +354,7 @@ void render(Game *game)
 
     //draw all particles here
     glPushMatrix();
-    glColor3ub(255,255,0);
+    glColor3ub(rnd()*255,rnd()*255,rnd()*255);
 
     for (int i=0; i<game->n; i++) {
         Vec *c = &game->particle[i].s.center;
@@ -397,11 +397,11 @@ void render(Game *game)
         ggprint16(&coding, 200*5, cref, "Coding");
         ggprint16(&testing, 300*5, cref, "Testing");
         ggprint16(&maintenance, 400*5, cref, "Maintenance");*/
-        ggprint16(&requirements, 0, cref, "Requirments");
-        ggprint16(&design,  0, cref, "Design");
-        ggprint16(&coding,  0, cref, "Coding");
-        ggprint16(&testing, 0, cref, "Testing");
-        ggprint16(&maintenance, 0, cref, "Maintenance");
+        ggprint16(&requirements,-0.5, cref, "Requirments");
+        ggprint16(&design,  -0.5, cref, "Design");
+        ggprint16(&coding, -0.5, cref, "Coding");
+        ggprint16(&testing, -0.5, cref, "Testing");
+        ggprint16(&maintenance, -0.5, cref, "Maintenance");
 }
 
 
